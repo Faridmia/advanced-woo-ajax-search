@@ -150,7 +150,14 @@ class Advanced_Awas_Woo_Admin
     public function awas_woo_add_menu()
     {
 
-        add_menu_page(__('Advanced Woo Ajax Search', 'awas-woo'), __('Advanced Woo Ajax Search', 'advanced-woo-ajax-search'), 'manage_options', 'advanced-woo-option-setting', array($this, 'awas_woo_menu_callback'), 'dashicons-layout', "100");
+        add_menu_page(
+            __('Advanced Woo Ajax Search', 'awas-woo'), 
+            __('Advanced Woo Ajax Search', 'awas-woo'), 
+            'manage_options', 
+            'advanced-woo-option-setting', 
+            array($this, 'awas_woo_menu_callback'), 
+            'dashicons-layout', "100"
+        );
 
     }
 

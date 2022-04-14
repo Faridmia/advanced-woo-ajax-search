@@ -3,7 +3,7 @@
 /**
  * Fired during plugin activation
  *
- * @link       http://example.com
+ * @link       https://github.com/Faridmia/advanced-woo-ajax-search
  * @since      1.0.0
  *
  * @package    Advanced_Awas_Woo
@@ -30,7 +30,9 @@ class Advanced_Awas_Woo_Activator {
 	 * @since    1.0.0
 	 */
 	public static function activate() {
-
-	}
+        if ( !class_exists( 'WooCommerce' ) ) {
+            return false;
+        }
+    }
 
 }

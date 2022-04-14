@@ -3,7 +3,7 @@
 /**
  * Register all actions and filters for the plugin
  *
- * @link       http://example.com
+ * @link       https://github.com/Faridmia/advanced-woo-ajax-search
  * @since      1.0.0
  *
  * @package    Advanced_Awas_Woo

@@ -6,7 +6,7 @@
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the admin area.
  *
- * @link       http://example.com
+ * @link       https://github.com/Faridmia/advanced-woo-ajax-search
  * @since      1.0.0
  *
  * @package    Advanced_Awas_Woo

@@ -6,7 +6,7 @@
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
- * @link       http://example.com
+ * @link       https://github.com/Faridmia/advanced-woo-ajax-search
  * @since      1.0.0
  *
  * @package    Advanced_Awas_Woo
@@ -35,7 +35,7 @@ class Advanced_Awas_Woo_i18n {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'advanced-awas-woo',
+			'awas-woo',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);

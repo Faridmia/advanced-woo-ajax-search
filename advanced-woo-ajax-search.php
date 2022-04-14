@@ -2,11 +2,11 @@
 
 /**
  * Plugin Name:       Advanced Woo Ajax Search
- * Plugin URI:        http://example.com/advanced-awas-woo-uri/
+ * Plugin URI:        https://github.com/Faridmia/advanced-woo-ajax-search
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
  * Version:           1.0.0
  * Author:            faridmia
- * Author URI:        http://example.com/
+ * Author URI:        https://wordpress.org/plugins/search/faridmia/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       asaw-woo
@@ -63,6 +63,21 @@ function run_awas_woo() {
 
 	$plugin = new Advanced_Awas_Woo();
 	$plugin->run();
-
+	
 }
+
+function awas_admin_notices() { ?>
+	<div class="error">
+        <p><?php _e( '<strong>Advanced Woo ajax search  requires WooCommerce to be installed and active. You can download <a href="https://woocommerce.com/" target="_blank">WooCommerce</a> here.</strong>', 'awas-woo' ); ?></p>
+    </div>
+   	<?php
+}
+// woocommerce   plugin dependency
+function awas_install_woocommerce_dependency() {
+	if ( ! function_exists( 'WC' ) ) {
+		add_action( 'admin_notices', 'awas_admin_notices');
+	}
+}
+
+add_action( 'plugins_loaded',  'awas_install_woocommerce_dependency', 11 );
 run_awas_woo();

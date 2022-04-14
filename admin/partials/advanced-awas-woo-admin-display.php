@@ -2,7 +2,7 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       https://github.com/Faridmia/
+ * @link       https://github.com/Faridmia/advanced-woo-ajax-search
  * @since      1.0.0
  *
  * @package    live_asfw_woo
@@ -188,28 +188,6 @@ if (!class_exists('Advanced_Awas_Woo_Setting_Option')) :
             printf("%s", $html);
         }
 
-        public function callback_textarea($args)
-        {
-            $cdt_inf_basics = get_option("cdt_inf_basics");
-
-            $html = sprintf('<textarea  cols="45" rows="5" id="" name="">[wpinf-countdown id="1"]</textarea>');
-            $html .= $this->get_field_description($args);
-            printf("%s", $html);
-        }
-
-        public function callback_date($args)
-        {
-
-            $value       = esc_attr($this->get_option($args['id'], $args['section'], $args['std']));
-            $size        = isset($args['size']) && !is_null($args['size']) ? $args['size'] : 'regular';
-            $type        = isset($args['type']) ? $args['type'] : 'date';
-            $placeholder = empty($args['placeholder']) ? '' : ' placeholder="' . $args['placeholder'] . '"';
-
-            $html = sprintf('<input type="%1$s" class="%2$s-text" id="%3$s[%4$s]" name="%3$s[%4$s]" value="%5$s"%6$s/>', $type, $size, $args['section'], $args['id'], $value, $placeholder);
-            $html .= $this->get_field_description($args);
-
-            printf("%s", $html);
-        }
 
         /**
          * Displays a url field for a settings field
@@ -221,47 +199,6 @@ if (!class_exists('Advanced_Awas_Woo_Setting_Option')) :
             $this->callback_text($args);
         }
 
-        /**
-         * Displays a checkbox for a settings field
-         *
-         * @param array   $args settings field args
-         */
-        public function callback_checkbox($args)
-        {
-
-            $value = esc_attr($this->get_option($args['id'], $args['section'], $args['std']));
-
-            $html = '<fieldset>';
-            $html .= sprintf('<label for="wpuf-%1$s[%2$s]">', $args['section'], $args['id']);
-            $html .= sprintf('<input type="hidden" name="%1$s[%2$s]" value="off" />', $args['section'], $args['id']);
-            $html .= sprintf('<input type="checkbox" class="checkbox" id="wpuf-%1$s[%2$s]" name="%1$s[%2$s]" value="on" %3$s />', $args['section'], $args['id'], checked($value, 'on', false));
-            $html .= sprintf('%1$s</label>', $args['desc']);
-            $html .= '</fieldset>';
-
-            printf("%s", $html);
-        }
-
-        /**
-         * Displays a selectbox for a settings field
-         *
-         * @param array   $args settings field args
-         */
-        public function callback_select($args)
-        {
-
-            $value = esc_attr($this->get_option($args['id'], $args['section'], $args['std']));
-            $size  = isset($args['size']) && !is_null($args['size']) ? $args['size'] : 'regular';
-            $html  = sprintf('<select class="%1$s" name="%2$s[%3$s]" id="%2$s[%3$s]">', $size, $args['section'], $args['id']);
-
-            foreach ($args['options'] as $key => $label) {
-                $html .= sprintf('<option value="%s"%s>%s</option>', $key, selected($value, $key, false), $label);
-            }
-
-            $html .= sprintf('</select>');
-            $html .= $this->get_field_description($args);
-
-            printf("%s", $html);
-        }
 
         /**
          * Displays the html for a settings field

@@ -1,19 +1,19 @@
 === Advanced Woo Ajax Search ===
 Contributors: faridmia
-Tags: comments, spam
+Tags: ajax search,woo search,product search,woocommerce,woocommerce search
 Requires at least: 4.7.0
-Tested up to: 5.9.2
-Stable tag: 1.0.1
+Tested up to: 5.9.3
+Stable tag: 1.0.0
 Requires PHP: 5.6.0
 Version: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Most advanced ajax search plugin for WooCommerce
+Most advanced woo ajax search plugin for WooCommerce
 
 == Description ==
 
-Most advanced ajax search plugin for WooCommerce
+Most advanced woo ajax search plugin for WooCommerce. It provides a well-designed advanced AJAX search bar with real-time search suggestions to your users.
 
 == Installation ==
 
@@ -21,7 +21,7 @@ This section describes how to install the plugin and get it working.
 
 e.g.
 
-1. Upload `live-ajax-search-for-woocommerce.php` to the `/wp-content/plugins/` directory
+1. Upload `advanced-woo-ajax-search.php` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
 

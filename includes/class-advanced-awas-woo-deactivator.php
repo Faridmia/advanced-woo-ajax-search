@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Fired during plugin deactivation
  *
@@ -23,7 +22,7 @@
 class Advanced_Awas_Woo_Deactivator {
 
 	/**
-	 * Short Description. (use period)
+	 * deactivate function
 	 *
 	 * Long Description.
 	 *

@@ -1,9 +1,8 @@
 <?php
-
 /**
  * The public-facing functionality of the plugin.
  *
- * @link       http://example.com
+ * @link       https://profiles.wordpress.org/faridmia/
  * @since      1.0.0
  *
  * @package    Advanced_Awas_Woo
@@ -73,9 +72,9 @@ class Advanced_Awas_Woo_Public {
 		 * class.
 		 */
 
-		wp_enqueue_style('nouislider-min-css', plugin_dir_url(__FILE__) . 'css/nouislider.min.css', array(), $this->version, 'all');
-        wp_enqueue_style( $this->awas_woo, plugin_dir_url( __FILE__ ) . 'css/advanced-awas-woo-public.css', array(), $this->version, 'all' );
-        wp_enqueue_style('select2-min-css', plugin_dir_url(__FILE__) . 'css/select2.min.css', array(), $this->version, 'all');
+		wp_enqueue_style('nouislider-min-css', AWAS_WOO_PUBLIC_URL . 'css/nouislider.min.css', array(), $this->version, 'all');
+        wp_enqueue_style( $this->awas_woo, AWAS_WOO_PUBLIC_URL . 'css/advanced-awas-woo-public.css', array(), $this->version, 'all' );
+        wp_enqueue_style('select2-min-css', AWAS_WOO_PUBLIC_URL . 'css/select2.min.css', array(), $this->version, 'all');
 
 	}
 
@@ -98,15 +97,13 @@ class Advanced_Awas_Woo_Public {
 		 * class.
 		 */
 
-		
-
-		wp_enqueue_script('nouislider-min-js', plugin_dir_url( dirname( __FILE__ )) . 'assets/js/nouislider.min.js', array('jquery'), $this->version, false);
-        wp_enqueue_script('select2-full-js', plugin_dir_url( dirname( __FILE__ )) . 'assets/js/select2.full.js', array('jquery'), $this->version, false);
-        wp_enqueue_script( $this->awas_woo, plugin_dir_url( __FILE__ ) . 'js/advanced-awas-woo-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script('nouislider-min-js', AWAS_WOO_PUBLIC_URL . 'assets/js/nouislider.min.js', array('jquery'), $this->version, false);
+        wp_enqueue_script('select2-full-js', AWAS_WOO_PUBLIC_URL . 'assets/js/select2.full.js', array('jquery'), $this->version, false);
+        wp_enqueue_script( $this->awas_woo, AWAS_WOO_PUBLIC_URL . 'js/advanced-awas-woo-public.js', array( 'jquery' ), $this->version, false );
 
         $url = home_url();
         $asfw_home_url = esc_url($url);
-        wp_localize_script($this->plugin_name, 'live_asfw_woo_current_wp_home_url', array(
+        wp_localize_script($this->plugin_name, 'awas_woo_current_wp_home_url', array(
             'url' => $asfw_home_url,
             'ajax_url' => esc_url(admin_url('admin-ajax.php')),
             "select_placeholder"=> esc_html('Select option',"awas-woo"),

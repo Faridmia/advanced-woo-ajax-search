@@ -10,13 +10,13 @@
 	
 			//set searchKey send to ajax method
 			var searchInfo = {
-				action: 'live_ajax_search_woo_filter_product_title',
+				action: 'awas_woo_search_product_title_action',
 				searchKey: searchKey,
 			};
 			var $data = $(this).closest('.live-ajax-woo-search-widget').find('#live_ajaxsearch_title_sec');
 	
 			//Search Data Pass on Ajax Title Filter
-			$.post(live_asfw_woo_current_wp_home_url.ajax_url, searchInfo, function (msg) {
+			$.post(awas_woo_current_wp_home_url.ajax_url, searchInfo, function (msg) {
 				var searchedResult = msg.searchResult; //search result
 				var searchedItemParmalinks = msg.permalinks; // search items permalinks
 				// get DOM node to be parent of child list nodes

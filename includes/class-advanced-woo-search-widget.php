@@ -15,8 +15,8 @@ if ( !class_exists( 'woolive_ajax_search_widget_class' ) ) {
             ?>
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( 'Title', 'awas-woo' )?></label>
-                <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>"
-                    name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>">
+                <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
+                    name="<?php echo esc_attr($this->get_field_name( 'title' )); ?>" type="text" value="<?php echo wp_kses_post($title); ?>">
             </p>
            <?php
         }
@@ -25,11 +25,11 @@ if ( !class_exists( 'woolive_ajax_search_widget_class' ) ) {
                 return;
             }
 
-            echo $args['before_widget'];
+            echo wp_kses_post($args['before_widget']);
             if ( isset( $instance['title'] ) && $instance['title'] != "" ) {
-                echo $args['before_title'];
-                echo apply_filters( 'widget_title', $instance['title'] );
-                echo $args['after_title'];
+                printf("%s",$args['before_title']);
+                printf("%s", apply_filters( 'widget_title', $instance['title'] ));
+                printf("%s",$args['after_title']);
                 ?>
                 <div class="live-ajax-woo-search-widget live-asfw-woo-widget">
                     <div class="live-asfw-woo-search">
@@ -40,7 +40,7 @@ if ( !class_exists( 'woolive_ajax_search_widget_class' ) ) {
                 </div>
                 <?php
             }
-            echo $args['after_widget'];
+            echo wp_kses_post($args['after_widget']);
         }
         public function woolive_search_widget_func() {
             register_widget( 'woolive_ajax_search_widget_class' );

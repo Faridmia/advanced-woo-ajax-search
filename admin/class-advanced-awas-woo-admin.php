@@ -133,9 +133,12 @@ class Advanced_Awas_Woo_Admin
     // define the delete_widget callback
     public function awas_woo_action_delete_widget($widget_id, $sidebar_id, $id_base)
     {
-        if (strpos($widget_id, 'wooliveTitleWidget') !== false) {
+        if (strpos($widget_id, 'woolivetitlewidget') !== false) {
             global $wpdb;
-            $lasw_option_results = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}options WHERE option_name LIKE '" . $widget_id . "%'");
+            $option_query = $wpdb->prepare("SELECT * FROM {$wpdb->prefix}options WHERE option_name LIKE %s", '%' . $wpdb->esc_like( $widget_id ) . '%');
+
+            $lasw_option_results = $wpdb->get_results( $option_query );
+
             foreach ($lasw_option_results as $lasw_option_result) {
                 delete_option($lasw_option_result->option_name);
             }
@@ -161,7 +164,6 @@ class Advanced_Awas_Woo_Admin
 
     }
 
-
     public function awas_woo_menu_callback()
     { ?>
         <div class="cdt-wrap">
@@ -175,12 +177,10 @@ class Advanced_Awas_Woo_Admin
 
     public function awas_woo_enqueue_styles()
     {
-
-
         wp_enqueue_style('wp-color-picker');
-        wp_enqueue_style('admin-option-page', plugin_dir_url(__FILE__) . 'css/fontawesome.min.css', array('wp-color-picker'), $this->version, 'all');
-        wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/advanced-awas-woo-admin.css', array('wp-color-picker'), $this->version, 'all');
-        wp_enqueue_style('select2-min-css', plugin_dir_url(__FILE__) . '/css/select2.min.css', array(), $this->version, 'all');
+        wp_enqueue_style('admin-option-page', AWAS_WOO_ADMIN_URL . 'css/fontawesome.min.css', array('wp-color-picker'), $this->version, 'all');
+        wp_enqueue_style($this->plugin_name, AWAS_WOO_ADMIN_URL . 'css/advanced-awas-woo-admin.css', array('wp-color-picker'), $this->version, 'all');
+        wp_enqueue_style('select2-min-css', AWAS_WOO_ADMIN_URL . '/css/select2.min.css', array(), $this->version, 'all');
 
     }
 
@@ -194,12 +194,11 @@ class Advanced_Awas_Woo_Admin
 
         wp_enqueue_script('wp-color-picker');
         wp_enqueue_media();
-        wp_enqueue_script('select2-full-js', plugin_dir_url(__FILE__) . 'js/select2.min.js', array('jquery'), $this->version, true);
-        wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/advanced-awas-woo-admin.js', array('jquery', 'wp-color-picker', 'select2-full-js'), $this->version, true);
+        wp_enqueue_script('select2-full-js', AWAS_WOO_ADMIN_URL . 'js/select2.min.js', array('jquery'), $this->version, true);
+        wp_enqueue_script($this->plugin_name, AWAS_WOO_ADMIN_URL . 'js/advanced-awas-woo-admin.js', array('jquery', 'wp-color-picker', 'select2-full-js'), $this->version, true);
         //passing home url to js
         $home_url = array('templateUrl' => home_url('/'),"select_placeholder"=> esc_html('Select option',"awas-woo"));
         //after wp_enqueue_script
         wp_localize_script($this->plugin_name, 'live_ajaxsearch_localize_obj', $home_url);
     }
-
 }

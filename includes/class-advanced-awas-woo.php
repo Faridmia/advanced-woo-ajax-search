@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The file that defines the core plugin class
  *
@@ -109,26 +108,26 @@ class Advanced_Awas_Woo {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-advanced-awas-woo-loader.php';
+		require_once AWAS_WOO_INCLUDES . 'class-advanced-awas-woo-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-advanced-awas-woo-i18n.php';
+		require_once AWAS_WOO_INCLUDES . 'class-advanced-awas-woo-i18n.php';
 
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-advanced-woo-hooks-function.php';
+		require_once AWAS_WOO_INCLUDES . 'class-advanced-woo-hooks-function.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-advanced-awas-woo-admin.php';
+		require_once AWAS_WOO_PATH . 'admin/class-advanced-awas-woo-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-advanced-awas-woo-public.php';
+		require_once AWAS_WOO_PATH . 'public/class-advanced-awas-woo-public.php';
 
 		$this->loader = new Advanced_Awas_Woo_Loader();
 

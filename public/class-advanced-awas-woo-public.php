@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The public-facing functionality of the plugin.
  *
@@ -75,9 +74,9 @@ class Advanced_Awas_Woo_Public {
 		 * class.
 		 */
 
-		wp_enqueue_style('nouislider-min-css', plugin_dir_url(__FILE__) . 'css/nouislider.min.css', array(), $this->version, 'all');
-        wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/advanced-awas-woo-public.css', array(), $this->version, 'all' );
-        wp_enqueue_style('select2-min-css', plugin_dir_url(__FILE__) . 'css/select2.min.css', array(), $this->version, 'all');
+		wp_enqueue_style('nouislider-min-css', AWAS_WOO_PUBLIC_URL . 'css/nouislider.min.css', array(), $this->version, 'all');
+        wp_enqueue_style( $this->plugin_name, AWAS_WOO_PUBLIC_URL . 'css/advanced-awas-woo-public.css', array(), $this->version, 'all' );
+        wp_enqueue_style('select2-min-css', AWAS_WOO_PUBLIC_URL . 'css/select2.min.css', array(), $this->version, 'all');
 
 	}
 
@@ -101,17 +100,15 @@ class Advanced_Awas_Woo_Public {
 		 */
 
 		
-        wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/advanced-awas-woo-public.js', array( 'jquery' ), $this->version, false );
+        wp_enqueue_script( $this->plugin_name, AWAS_WOO_PUBLIC_URL . 'js/advanced-awas-woo-public.js', array( 'jquery' ), $this->version, false );
 
         $url = home_url();
         $asfw_home_url = esc_url($url);
-        wp_localize_script($this->plugin_name, 'live_asfw_woo_current_wp_home_url', array(
+        wp_localize_script($this->plugin_name, 'awas_woo_current_wp_home_url', array(
             'url' => $asfw_home_url,
             'ajax_url' => esc_url(admin_url('admin-ajax.php')),
             "select_placeholder"=> esc_html('Select option',"awas-woo"),
             )
         );
-
 	}
-
 }

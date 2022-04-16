@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Define the internationalization functionality
  *
@@ -26,7 +25,6 @@
  */
 class Advanced_Awas_Woo_i18n {
 
-
 	/**
 	 * Load the plugin text domain for translation.
 	 *
@@ -37,7 +35,7 @@ class Advanced_Awas_Woo_i18n {
 		load_plugin_textdomain(
 			'awas-woo',
 			false,
-			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
+			AWAS_WOO_BASENAME . '/languages/'
 		);
 
 	}

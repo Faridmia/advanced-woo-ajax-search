@@ -8,7 +8,7 @@ class Advanced_Woo_Hooks_Function
 
     public function __construct()
     {
-       // $this->advanced_add_custom_css_callback();
+        
     }
 
     public function advanced_add_custom_css_callback()

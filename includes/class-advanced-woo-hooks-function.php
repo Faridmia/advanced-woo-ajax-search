@@ -8,7 +8,6 @@ class Advanced_Woo_Hooks_Function
 
     public function __construct()
     {
-        
     }
 
     public function advanced_add_custom_css_callback()
@@ -16,22 +15,22 @@ class Advanced_Woo_Hooks_Function
         $basic_option = get_option('awas_woo_inf_basics');
         $adv_option   = get_option('awas_woo_inf_color');
 
-        if( isset( $basic_option ) ) {
+        if (isset($basic_option)) {
 
-            $awas_woo_title_text_size = ($basic_option['awas_woo_title_text_size']) ? $basic_option['awas_woo_title_text_size'] : '';
-            $awas_inner_text_size = ($basic_option['awas_inner_text_size']) ? $basic_option['awas_inner_text_size'] : '';
-            $awas_search_field_padding = ($basic_option['awas_search_field_padding']) ? $basic_option['awas_search_field_padding'] : '';
+            $awas_woo_title_text_size = (isset($basic_option['awas_woo_title_text_size'])) ? $basic_option['awas_woo_title_text_size'] : '';
+            $awas_inner_text_size = (isset($basic_option['awas_inner_text_size'])) ? $basic_option['awas_inner_text_size'] : '';
+            $awas_search_field_padding = (isset($basic_option['awas_search_field_padding'])) ? $basic_option['awas_search_field_padding'] : '';
         }
 
-        if(isset($adv_option)) {
+        if (isset($adv_option)) {
 
-            $awas_heading_title_col = ($adv_option['title_color']) ? $adv_option['title_color'] : '';
+            $awas_heading_title_col = (isset($adv_option['title_color'])) ? $adv_option['title_color'] : '';
 
-            $awas_title_opt_bg = ($adv_option['awas_title_opt_bg']) ? $adv_option['awas_title_opt_bg'] : '';
-            $search_pro_title_color = ($adv_option['search_pro_title_color']) ? $adv_option['search_pro_title_color'] : '';
+            $awas_title_opt_bg = (isset($adv_option['awas_title_opt_bg'])) ? $adv_option['awas_title_opt_bg'] : '';
+            $search_pro_title_color = (isset($adv_option['search_pro_title_color'])) ? $adv_option['search_pro_title_color'] : '';
 
-            $awas_title_hover_opt_bg = ($adv_option['awas_title_hover_opt_bg']) ? $adv_option['awas_title_hover_opt_bg'] : '';
-            $search_pro_hover_title_color = ($adv_option['search_pro_hover_title_color']) ? $adv_option['search_pro_hover_title_color'] : '';
+            $awas_title_hover_opt_bg = (isset($adv_option['awas_title_hover_opt_bg'])) ? $adv_option['awas_title_hover_opt_bg'] : '';
+            $search_pro_hover_title_color = (isset($adv_option['search_pro_hover_title_color'])) ? $adv_option['search_pro_hover_title_color'] : '';
         }
 
 
@@ -50,14 +49,14 @@ class Advanced_Woo_Hooks_Function
             }";
         }
 
-        if ( $awas_title_opt_bg != "" || $search_pro_title_color != "") {
+        if ($awas_title_opt_bg != "" || $search_pro_title_color != "") {
             $custom_style .= "#live_ajaxsearch_title_sec li {
                 background: $awas_title_opt_bg!important;
                 color: $search_pro_title_color!important;
             }";
         }
 
-        if ( $awas_title_hover_opt_bg != "" || $search_pro_hover_title_color != "") {
+        if ($awas_title_hover_opt_bg != "" || $search_pro_hover_title_color != "") {
             $custom_style .= "#live_ajaxsearch_title_sec li:hover {
                 background: $awas_title_hover_opt_bg!important;
                 color: $search_pro_hover_title_color!important;
@@ -72,7 +71,6 @@ class Advanced_Woo_Hooks_Function
             $custom_style .= ".widget .live-ajax-search-woo-filter-widget input[type='text'],input[type='search'],.widget-area .widget .live-ajax-search-woo-filter-widget ul li a{
                 font-size: $awas_inner_text_size!important;
             }";
-
         }
 
         wp_register_style('live_asfw_custom_css_button', false);

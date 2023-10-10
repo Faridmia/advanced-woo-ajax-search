@@ -3,7 +3,7 @@ Contributors: faridmia
 Tags: ajax search,woo search,product search,woocommerce,woocommerce search
 Requires at least: 6.1
 Tested up to: 6.3
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 7.3
 Version: 1.0.1
 License: GPLv2 or later
@@ -46,6 +46,7 @@ Yes, you need WooCommerce plugin to be installed
 * Initial stable version
 
 = 1.0.1 =
+* code updated and fix new version
 * readme file update
 
 

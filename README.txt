@@ -1,11 +1,11 @@
 === Advanced Woo Ajax Search ===
 Contributors: faridmia
 Tags: ajax search,woo search,product search,woocommerce,woocommerce search
-Requires at least: 4.7.0
-Tested up to: 5.9.3
+Requires at least: 6.1
+Tested up to: 6.3
 Stable tag: 1.0.0
-Requires PHP: 5.6.0
-Version: 1.0.0
+Requires PHP: 7.3
+Version: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,6 +14,8 @@ Most advanced woo ajax search plugin for WooCommerce
 == Description ==
 
 Most advanced woo ajax search plugin for WooCommerce. It provides a well-designed advanced AJAX search bar with real-time search suggestions to your users.
+
+Unlock the power of advanced woo ajax search with WooCommerce, the most sought-after WooCommerce product search plugin. Give your users an elegant and feature-rich AJAX search bar with live search suggestions, elevating their shopping experience to a whole new level.
 
 == Installation ==
 
@@ -42,6 +44,9 @@ Yes, you need WooCommerce plugin to be installed
 
 = 1.0.0 =
 * Initial stable version
+
+= 1.0.1 =
+* readme file update
 
 
 == Upgrade Notice ==
